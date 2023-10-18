@@ -1,0 +1,37 @@
+<h1>My App</h1>
+<p>Card works!</p>
+<button (click)="adicionar()">Adicione a lista</button>
+
+<ul>
+  <!-- *ngFor - diretiva de laço dinâmico que adiciona e remove os elementos via index do objeto-->
+  <li *ngFor="let p of produtos; let i = index"
+    (click)="remover(i)"
+  >
+    {{ i }} - {{ p }}
+  </li>
+</ul>
+
+<!-- ngSwitch - estrutura switch case que dependendo da propriedade passada no component renderiza o menu  -->
+<div [ngSwitch]="menuType">
+  <div *ngSwitchDefault>
+    <ul>
+      <li> editar perfil</li>
+      <li> adicionar cartão</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'admin'">
+    <ul>
+      <li> editar perfil</li>
+      <li> adicionar cartão</li>
+      <li> gerenciar usuarios</li>
+    </ul>
+  </div>
+  <div *ngSwitchCase="'superuser'">
+    <ul>
+      <li> editar perfil</li>
+      <li> adicionar cartão</li>
+      <li> gerenciar usuarios</li>
+      <li> gerenciar admins</li>
+    </ul>
+  </div>
+</div>

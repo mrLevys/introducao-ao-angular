@@ -1,0 +1,11 @@
+
+<app-card *ngIf="isAliveCard; else anotherBlock"></app-card>
+<!-- *ngIf - condicional bolean pra mostrar ou não o component e/ou parte dele -->
+<!-- *ngIf - sendo tratado via data biding -->
+<!-- *ngIf - sendo tratado via data biding para mostrar um ng-template -->
+
+<ng-template #anotherBlock>
+  <p>olá sou um bloco secreto</p>
+</ng-template>
+
+<router-outlet></router-outlet>
