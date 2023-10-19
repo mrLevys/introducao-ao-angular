@@ -1,0 +1,35 @@
+<!-- [ngClass] - dinâmico -->
+<p [ngClass]="estilo">comp-atributos works!</p>
+
+<button (click)="trocar()">Change</button>
+
+<!-- [ngStyle] - consigo deixar o valor dinâmico via biding -->
+<h1 [ngStyle]="{'background': corFundo, 'color': corDaFont}">Curso Angular</h1>
+
+<!-- [ngModel] -  -->
+<h2>Lista de compras</h2>
+<p>adicione um item</p>
+<input type="text" [(ngModel)]="item">
+<button (click)="adicionarLista()">Adicionar</button>
+<p>{{ item }}</p>
+
+<ul>
+  <li *ngFor="let elemento of lista"> {{ elemento }} </li>
+</ul>
+
+<hr>
+
+<!-- [ngTemplate] - por padrão ele não vem habilitado, -->
+<ng-template [ngIf]="isEnableBlock">
+  <a href="#">Finalizar compra</a>
+</ng-template>
+<br>
+<ng-template [ngIf]="true">
+  <a href="#">Adicionar ao carrinho</a>
+</ng-template>
+
+<hr>
+
+<!-- [ngContent] - permite que um component pai passe pra um comp filho e vc consiga se rearranjar tudo dinâmicamente -->
+<ng-content select="h2, p"></ng-content>
+<hr>
